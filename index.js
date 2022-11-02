@@ -15,7 +15,7 @@ var app = (0, _express["default"])();
 app.use(_bodyParser["default"].json());
 app.use((0, _cors["default"])());
 (0, _routes["default"])(app);
-app.use(_express["default"]["static"]("public"));
+// app.use(_express["default"]["static"]("public"));
 app.get('/', function (req, res) {
   res.json({
     msg: "hello world"
