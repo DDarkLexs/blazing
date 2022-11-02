@@ -1,7 +1,7 @@
 {
   "name": "blaze",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "index.js",
   "license": "MIT",
   "engines":{
     "node":"16.x"
