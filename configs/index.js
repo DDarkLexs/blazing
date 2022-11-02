@@ -18,7 +18,7 @@ var sqliteConnection = {
   client: 'sqlite3',
   // or 'better-sqlite3'
   connection: {
-    filename: _path["default"].join(process.env.INIT_CWD + '/src/database/index.db')
+    filename: _path["default"].join(process.env.INIT_CWD + '/database/index.db')
   },
   useNullAsDefault: true
 };
