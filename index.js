@@ -2,7 +2,7 @@
 
 var _express = _interopRequireDefault(require("express"));
 var _bodyParser = _interopRequireDefault(require("body-parser"));
-// var _routes = _interopRequireDefault(require("./routes"));
+var _routes = _interopRequireDefault(require("./src/routes"));
 var _cors = _interopRequireDefault(require("cors"));
 var _dotenv = _interopRequireDefault(require("dotenv"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -14,8 +14,8 @@ var PORT = process.env.PORT || 5000;
 var app = (0, _express["default"])();
 app.use(_bodyParser["default"].json());
 app.use((0, _cors["default"])());
-// (0, _routes["default"])(app);
-app.use(_express["default"]["static"]("public"));
+(0, _routes["default"])(app);
+app.use(_express["default"]["static"]("src/public"));
 app.get('/', function (req, res) {
   res.json({
     msg: "hello world"
