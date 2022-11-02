@@ -4,6 +4,7 @@ var _express = _interopRequireDefault(require("express"));
 var _bodyParser = _interopRequireDefault(require("body-parser"));
 // var _routes = _interopRequireDefault(require("./routes"));
 var _cors = _interopRequireDefault(require("cors"));
+const knex = require('./model')
 var _dotenv = _interopRequireDefault(require("dotenv"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 // import { authToken, generateAccessToken,formatToByte } from './configs'
@@ -16,10 +17,11 @@ app.use(_bodyParser["default"].json());
 app.use((0, _cors["default"])());
 // (0, _routes["default"])(app);
 // app.use(_express["default"]["static"]("public"));
-app.get('/', function (req, res) {
-  res.json({
-    msg: "hello world"
-  });
+app.get('/', async function (req, res) {
+
+  const query = (await knex('usuario').selct(""))
+  console.log(query)
+  res.json(query);
 });
 app.get('/app', function (req, res) {
   res.sendFile('index.html', {
